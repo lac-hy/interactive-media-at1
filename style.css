@@ -13,10 +13,30 @@ body {
   min-height: 100%;
 }
 
+.spacer {
+  height: 120px;
+}
+
 body {
   background: #d9d9d9;
   font-family: Arial, Helvetica, sans-serif;
   color: #2f2f2f;
+  font-weight: 400;
+}
+
+.body-copy {
+  font-family: "Neue Haas Display", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  letter-spacing: 0.08em;
+  line-height: 1.6;
+  max-width: 585px;
+  font-size: 18px;
+  line-height: 1.28;
+  color: #444;
+}
+
+.body-copy strong {
+  font-weight: 700;
 }
 
 /* -----------------------
@@ -124,15 +144,6 @@ body {
   margin-bottom: 68px;
 }
 
-.body-copy {
-  max-width: 585px;
-  font-size: 18px;
-  line-height: 1.28;
-  font-weight: 400;
-  letter-spacing: -0.35px;
-  color: #444;
-}
-
 /* -----------------------
    Bottom image section
 ------------------------ */
@@ -141,108 +152,6 @@ body {
   height: 245px;
   overflow: hidden;
   background: #dadfe4;
-}
-
-.liquid-art {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(
-      circle at 8% 75%,
-      rgba(122, 157, 182, 0.45),
-      transparent 16%
-    ),
-    radial-gradient(
-      circle at 16% 52%,
-      rgba(174, 205, 231, 0.7),
-      transparent 20%
-    ),
-    radial-gradient(
-      circle at 28% 30%,
-      rgba(195, 216, 238, 0.55),
-      transparent 22%
-    ),
-    radial-gradient(circle at 39% 13%, rgba(48, 62, 31, 0.75), transparent 10%),
-    radial-gradient(
-      circle at 54% 48%,
-      rgba(232, 232, 237, 0.95),
-      transparent 24%
-    ),
-    radial-gradient(
-      circle at 60% 15%,
-      rgba(174, 177, 78, 0.65),
-      transparent 12%
-    ),
-    radial-gradient(
-      circle at 67% 37%,
-      rgba(213, 220, 238, 0.75),
-      transparent 11%
-    ),
-    radial-gradient(
-      circle at 72% 28%,
-      rgba(248, 170, 160, 0.5),
-      transparent 15%
-    ),
-    radial-gradient(circle at 82% 48%, rgba(72, 78, 58, 0.8), transparent 18%),
-    radial-gradient(circle at 91% 21%, rgba(22, 21, 20, 0.95), transparent 22%),
-    linear-gradient(90deg, #c6d4e2 0%, #edf0f3 27%, #f7eceb 56%, #1f1c1a 100%);
-  filter: blur(6px) saturate(120%);
-  transform: scale(1.08);
-}
-
-.liquid-art::before,
-.liquid-art::after {
-  content: "";
-  position: absolute;
-  inset: -20px;
-  background:
-    radial-gradient(
-      circle at 12% 70%,
-      rgba(255, 255, 255, 0.7),
-      transparent 12%
-    ),
-    radial-gradient(
-      circle at 31% 49%,
-      rgba(210, 220, 226, 0.85),
-      transparent 16%
-    ),
-    radial-gradient(
-      circle at 48% 31%,
-      rgba(255, 255, 255, 0.66),
-      transparent 18%
-    ),
-    radial-gradient(
-      circle at 64% 56%,
-      rgba(189, 202, 227, 0.65),
-      transparent 13%
-    ),
-    radial-gradient(
-      circle at 77% 46%,
-      rgba(128, 146, 98, 0.7),
-      transparent 11%
-    ),
-    radial-gradient(
-      circle at 86% 68%,
-      rgba(255, 194, 182, 0.45),
-      transparent 10%
-    );
-  mix-blend-mode: screen;
-  filter: blur(16px);
-  opacity: 0.9;
-}
-
-.liquid-art::after {
-  background:
-    radial-gradient(
-      circle at 14% 84%,
-      rgba(89, 114, 136, 0.45),
-      transparent 12%
-    ),
-    radial-gradient(circle at 41% 14%, rgba(54, 62, 44, 0.6), transparent 8%),
-    radial-gradient(circle at 71% 42%, rgba(74, 86, 102, 0.55), transparent 9%),
-    radial-gradient(circle at 89% 22%, rgba(0, 0, 0, 0.75), transparent 14%);
-  mix-blend-mode: multiply;
-  opacity: 0.75;
 }
 
 .image-overlay {
@@ -342,4 +251,149 @@ body {
   .image-overlay {
     font-size: 12px;
   }
+}
+
+.banner {
+  filter: blur(12px);
+}
+
+.content-blocks {
+  width: 100%;
+  padding: 80px 20px 120px;
+  background: #f4f0f0;
+}
+
+.content-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.content-row.reverse .content-text {
+  order: 2;
+}
+
+.content-row.reverse .content-image {
+  order: 1;
+}
+
+.content-text h2 {
+  font-size: 2rem;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.content-text p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  max-width: 600px;
+  color: #333;
+}
+
+.content-image img {
+  width: 100%;
+  display: block;
+  border-radius: 0;
+  object-fit: cover;
+}
+
+/* mobile */
+@media (max-width: 900px) {
+  .content-row,
+  .content-row.reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .content-row.reverse .content-text,
+  .content-row.reverse .content-image {
+    order: unset;
+  }
+}
+
+@font-face {
+  font-family: "Neue Haas Display";
+  src: url("fonts/neuehaasgrotdisp-15xxthin-trial.otf") format("opentype");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neue Haas Display";
+  src: url("fonts/NeueHaas-Regular.woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Neue Haas Display";
+  src: url("fonts/NeueHaas-Bold.woff2");
+  font-weight: 700;
+}
+
+.response-section {
+  display: grid;
+  grid-template-columns: 34% 66%;
+  min-height: 100vh;
+  background: #f6f2f2;
+}
+
+.response-text {
+  padding: 3rem 2.2rem 3rem 2.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.response-kicker {
+  font-size: 0.75rem;
+  margin: 0 0 2.5rem 0;
+}
+
+.response-text h2 {
+  font-family: "Helvetica";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 0.95;
+  color: #a13a5d;
+  margin: 0 0 2.5rem 0;
+}
+
+.response-text p {
+  font-family: "Neue Haas Display";
+  font-size: 24;
+  font-weight: 100;
+  line-height: 1.45;
+  margin: 0 0 1.2rem 0;
+  max-width: 95%;
+}
+
+.response-image {
+  height: 100%;
+}
+
+.response-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* banner styling for the image break */
+
+.image-banner {
+  width: 100%;
+  height: 180px; /* controls how "narrow" it is */
+  overflow: hidden;
+}
+
+.image-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
