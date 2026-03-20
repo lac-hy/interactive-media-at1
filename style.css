@@ -383,3 +383,15 @@ body {
   object-fit: cover;
   object-position: center;
 }
+
+.response-section.reverse {
+  grid-template-columns: 55% 45%;
+}
+
+.response-section.reverse .response-text {
+  order: 2;
+}
+
+.response-section.reverse .response-image {
+  order: 1;
+}
