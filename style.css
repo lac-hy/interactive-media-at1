@@ -1,6 +1,7 @@
 /* -----------------------
-   Base reset
------------------------- */
+   Basic page setup
+----------------------- */
+
 * {
   margin: 0;
   padding: 0;
@@ -17,8 +18,11 @@ body {
   background: #d9d9d9;
   font-family: Arial, Helvetica, sans-serif;
   color: #2f2f2f;
-  font-weight: 400;
 }
+
+/* -----------------------
+   Fonts
+----------------------- */
 
 @font-face {
   font-family: "Neue Haas Display";
@@ -31,351 +35,158 @@ body {
   font-family: "Neue Haas Display";
   src: url("fonts/NeueHaas-Regular.woff2");
   font-weight: 400;
+  font-style: normal;
 }
 
 @font-face {
   font-family: "Neue Haas Display";
   src: url("fonts/NeueHaas-Bold.woff2");
   font-weight: 700;
+  font-style: normal;
 }
 
 /* -----------------------
-   Outer layout
------------------------- */
+   Overall page layout
+----------------------- */
+
 .page-wrap {
   width: 100%;
-  min-height: 100vh;
-  padding: 245px 40px 80px;
+  padding: 120px 40px;
   display: flex;
   justify-content: center;
 }
 
-.site-frame {
+.page {
   width: 100%;
-  max-width: 1120px;
+  max-width: 980px;
   background: #f5efef;
-  border: 1px solid rgba(0, 0, 0, 0.04);
-  display: flex;
-  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 /* -----------------------
-   Header
------------------------- */
+   Top bar
+----------------------- */
+
 .topbar {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: start;
-  padding: 12px 16px 0 16px;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 18px 24px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #666;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
-.logo {
-  font-size: 18px;
-  font-weight: 800;
-  letter-spacing: -0.6px;
-  color: #000;
-  line-height: 1;
+.topbar-centre {
+  text-align: center;
 }
 
-.reg {
-  font-size: 10px;
-  vertical-align: top;
-  margin-left: 2px;
-  position: relative;
-  top: -1px;
-}
-
-.nav-links {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 28px;
-  padding-top: 2px;
-}
-
-.nav-links a,
-.cta-link {
-  text-decoration: none;
-  color: #4a4a4a;
-  font-size: 12px;
-  font-weight: 400;
-}
-
-.cta-link {
-  justify-self: end;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-  padding-top: 2px;
+.topbar-right {
+  text-align: right;
 }
 
 /* -----------------------
-   Hero
------------------------- */
-.hero-grid {
-  display: grid;
-  grid-template-columns: 46% 54%;
-  min-height: 450px;
-  padding: 90px 16px 22px 16px;
+   Blog/article layout
+----------------------- */
+
+.blog-layout {
+  width: 100%;
+  padding: 56px 0 80px 0;
 }
 
-.left-copy {
-  display: flex;
-  align-items: end;
-  padding-bottom: 35px;
+.intro-block {
+  max-width: 700px;
+  margin: 0 auto 56px auto;
+  padding: 0 24px;
 }
 
-.left-copy p {
-  font-size: 18px;
-  line-height: 1.15;
-  color: #9a9a9a;
-  letter-spacing: -0.3px;
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8d8d8d;
+  margin-bottom: 16px;
 }
 
-.right-copy {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-left: 24px;
-  max-width: 600px;
-}
-
-.right-copy h1 {
-  font-size: 34px;
-  line-height: 0.98;
+.intro-block h1 {
+  font-size: 58px;
+  line-height: 0.95;
+  letter-spacing: -2px;
   font-weight: 500;
-  letter-spacing: -1.4px;
-  color: #353535;
-  margin-bottom: 68px;
+  color: #303030;
+  margin-bottom: 28px;
 }
 
-.body-copy {
+.intro-text {
   font-family: "Neue Haas Display", Helvetica, Arial, sans-serif;
   font-weight: 100;
-  letter-spacing: 0.08em;
-  font-size: 18px;
-  line-height: 1.28;
-  max-width: 585px;
+  font-size: 24px;
+  line-height: 1.4;
   color: #444;
-}
-
-.body-copy strong {
-  font-weight: 700;
+  max-width: 680px;
 }
 
 /* -----------------------
-   Image panel
------------------------- */
-.image-panel {
-  position: relative;
-  height: 245px;
-  overflow: hidden;
-  background: #dadfe4;
-  display: flex;
-  align-items: stretch;
+   Images
+----------------------- */
+
+.feature-image,
+.inline-image {
+  width: 100%;
+  margin: 0 0 56px 0;
 }
 
-.banner {
+.feature-image img,
+.inline-image img {
   width: 100%;
-  height: 100%;
-  filter: blur(12px);
-}
-
-.banner img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
   display: block;
+  object-fit: cover;
 }
 
-.image-overlay {
-  position: absolute;
-  z-index: 2;
-  bottom: 14px;
-  font-size: 14px;
-  color: #444;
-  letter-spacing: -0.2px;
+.feature-image img {
+  max-height: 520px;
 }
 
-.image-left {
-  left: 16px;
-}
-
-.image-right {
-  right: 16px;
-  color: #f2f2f2;
+.inline-image {
+  max-width: 700px;
+  margin: 0 auto 56px auto;
+  padding: 0 24px;
 }
 
 /* -----------------------
-   Response grids
------------------------- */
-.response-grid {
-  display: grid;
-  grid-template-columns: 34% 66%;
-  min-height: 100vh;
-  background: #f6f2f2;
+   Written content blocks
+----------------------- */
+
+.content-block {
+  max-width: 700px;
+  margin: 0 auto 56px auto;
+  padding: 0 24px;
 }
 
-.response-grid.reverse {
-  grid-template-columns: 55% 45%;
+.section-label {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8d8d8d;
+  margin-bottom: 14px;
 }
 
-.response-grid.reverse .response-text {
-  order: 2;
-}
-
-.response-grid.reverse .response-image {
-  order: 1;
-}
-
-.response-text {
-  padding: 3rem 2.2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.response-kicker {
-  font-size: 0.75rem;
-  margin: 0 0 2.5rem 0;
-}
-
-.response-text h2 {
+.content-block h2 {
   font-family: Helvetica, Arial, sans-serif;
   font-style: italic;
   font-weight: 400;
-  font-size: 24px;
-  line-height: 1;
+  font-size: 42px;
+  line-height: 0.98;
+  letter-spacing: -1.4px;
   color: #a13a5d;
-  margin: 0 0 2.5rem 0;
+  margin-bottom: 24px;
 }
 
-.response-text p {
+.content-block p {
   font-family: "Neue Haas Display", Helvetica, Arial, sans-serif;
-  font-size: 24px;
   font-weight: 100;
+  font-size: 24px;
   line-height: 1.45;
-  margin: 0 0 1.2rem 0;
-  max-width: 95%;
-}
-
-.response-image {
-  display: flex;
-  height: 100%;
-}
-
-.response-image img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  object-position: center;
-}
-
-/* -----------------------
-   Responsive
------------------------- */
-@media (max-width: 1000px) {
-  .page-wrap {
-    padding-top: 100px;
-  }
-
-  .topbar {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .nav-links {
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    gap: 16px;
-  }
-
-  .cta-link {
-    justify-self: start;
-  }
-
-  .hero-grid {
-    grid-template-columns: 1fr;
-    padding-top: 40px;
-    min-height: auto;
-    gap: 40px;
-  }
-
-  .right-copy {
-    padding-left: 0;
-  }
-
-  .right-copy h1 {
-    font-size: 42px;
-    margin-bottom: 32px;
-  }
-
-  .left-copy {
-    order: 2;
-    padding-bottom: 0;
-  }
-
-  .response-grid,
-  .response-grid.reverse {
-    grid-template-columns: 1fr;
-    min-height: auto;
-  }
-
-  .response-grid.reverse .response-text,
-  .response-grid.reverse .response-image {
-    order: unset;
-  }
-
-  .response-image {
-    min-height: 420px;
-  }
-}
-
-@media (max-width: 680px) {
-  .page-wrap {
-    padding: 30px 18px 40px;
-  }
-
-  .logo {
-    font-size: 15px;
-  }
-
-  .nav-links a,
-  .cta-link {
-    font-size: 11px;
-  }
-
-  .right-copy h1 {
-    font-size: 30px;
-    line-height: 1.02;
-  }
-
-  .body-copy,
-  .left-copy p {
-    font-size: 16px;
-  }
-
-  .image-panel {
-    height: 200px;
-  }
-
-  .image-overlay {
-    font-size: 12px;
-  }
-
-  .response-text {
-    padding: 2rem 1.2rem;
-  }
-
-  .response-text h2 {
-    font-size: 20px;
-  }
-
-  .response-text p {
-    font-size: 18px;
-  }
-
-  .response-image {
-    min-height: 280px;
-  }
+  color: #333;
 }
